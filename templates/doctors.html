@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block title %}Doctors{% endblock %}
+
+{% block content %}
+    <h1>Doctor Management</h1>
+
+    <form action="/doctors" method="post" class="card">
+        <h2>Add New Doctor</h2>
+        <div class="form-group">
+            <label for="first_name">First Name</label>
+            <input type="text" name="first_name" required>
+        </div>
+        <div class="form-group">
+            <label for="last_name">Last Name</label>
+            <input type="text" name="last_name" required>
+        </div>
+        <div class="form-group">
+            <label for="specialization">Specialization</label>
+            <input type="text" name="specialization" required>
+        </div>
+        <div class="form-group">
+            <label for="contact_number">Contact Number</label>
+            <input type="text" name="contact_number" required>
+        </div>
+        <button type="submit" class="btn">Add Doctor</button>
+    </form>
+
+    <h2 style="margin-top: 2rem;">All Doctors</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Specialization</th>
+                <th>Contact</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for doctor in doctors %}
+            <tr>
+                <td>{{ doctor.id }}</td>
+                <td>{{ doctor.first_name }} {{ doctor.last_name }}</td>
+                <td>{{ doctor.specialization }}</td>
+                <td>{{ doctor.contact_number }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f4f7f6;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* --- Navigation Bar --- */
+nav {
+    background-color: #fff;
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav .logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #007a7a; /* Teal */
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav li {
+    margin-left: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #555;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #007a7a;
+}
+
+/* --- Main Content --- */
+h1 {
+    color: #222;
+    margin-bottom: 1.5rem;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+/* --- Cards --- */
+.card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    padding: 20px;
+    transition: box-shadow 0.3s;
+}
+
+.card:hover {
+    box-shadow: 0 8px 12px rgba(0,0,0,0.05);
+}
+
+.card h2 {
+    margin-top: 0;
+    color: #007a7a;
+}
+
+.card p {
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.card-info {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* --- Tables --- */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+th {
+    background-color: #f9f9f9;
+    font-weight: 600;
+    color: #444;
+}
+
+tbody tr:hover {
+    background-color: #fafafa;
+}
+
+/* --- Forms --- */
+form {
+    background: #fff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+form .form-group {
+    margin-bottom: 15px;
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="password"],
+form input[type="date"],
+form input[type="datetime-local"],
+form select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box; /* Important */
+}
+
+.btn {
+    background-color: #007a7a;
+    color: #fff;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #005a5a;
+}

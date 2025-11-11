@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+    <h1>Hospital Dashboard</h1>
+    <div class="grid-container">
+        <div class="card">
+            <h2>Patients</h2>
+            <p>View and manage patient records.</p>
+            <a href="/patients" class="btn">Manage Patients</a>
+        </div>
+        <div class="card">
+            <h2>Appointments</h2>
+            <p>View and schedule patient appointments.</p>
+            <a href="/appointments" class="btn">Manage Appointments</a>
+        </div>
+        <div class="card">
+            <h2>Doctors</h2>
+            <p>Manage doctor profiles and schedules.</p>
+            <a href="#" class="btn">Manage Doctors</a>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+
+{% block title %}Appointments{% endblock %}
+
+{% block content %}
+    <h1>Appointment Management</h1>
+
+    <!-- Form to Add New Appointment -->
+    <form action="/appointments" method="post" class="card">
+        <h2>Schedule New Appointment</h2>
+        <div class="form-group">
+            <label for="patient_id">Patient</label>
+            <select name="patient_id" required>
+                {% for patient in patients %}
+                <option value="{{ patient.id }}">{{ patient.first_name }} {{ patient.last_name }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="doctor_id">Doctor</label>
+            <select name="doctor_id" required>
+                {% for doctor in doctors %}
+                <option value="{{ doctor.id }}">{{ doctor.first_name }} {{ doctor.last_name }} - {{ doctor.specialization }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="appointment_date">Appointment Date</label>
+            <input type="datetime-local" name="appointment_date" required>
+        </div>
+        <div class="form-group">
+            <label for="reason">Reason</label>
+            <input type="text" name="reason" required>
+        </div>
+        <button type="submit" class="btn">Book Appointment</button>
+    </form>
+
+    <!-- Table of Existing Appointments -->
+    <h2 style="margin-top: 2rem;">Scheduled Appointments</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Patient ID</th>
+                <th>Doctor ID</th>
+                <th>Date</th>
+                <th>Reason</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for appt in appointments %}
+            <tr>
+                <td>{{ appt.id }}</td>
+                <td>{{ appt.patient_id }}</td>
+                <td>{{ appt.doctor_id }}</td>
+                <td>{{ appt.appointment_date }}</td>
+                <td>{{ appt.reason }}</td>
+                <td>{{ appt.status }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
